@@ -70,3 +70,13 @@ console.log(operadorLogico); // true
 
 const isGreaterThan3 = w > 3; // true
 console.log(!isGreaterThan3); // false
+
+let numero = 23, numero2 = 34;
+
+/* EJERCICIO
+const numero1 = 20;
+const numero2 = 5; 
+const valorFinal = 120;
+
+console.log(numero1 * numero2 === valorFinal);
+*/
