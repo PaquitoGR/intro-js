@@ -1,5 +1,5 @@
 // ejemplos de if, else if, else, switch
-
+/*
 let edad = 18;
 
 console.log(`La edad es ${edad}`); 
@@ -38,7 +38,7 @@ if (value) {
 
 // switch
 
-let day = 'Sunday';
+let day = prompt('Please, gSive me a day of the week');
 
 if (day === 'Monday') {
     console.log(`it's ${day}`)
@@ -50,6 +50,8 @@ if (day === 'Monday') {
     console.log(`it's ${day}`)
 } else if (day === 'Friday') {
     console.log(`it's ${day}`)
+} else {
+    console.log("It's neither Monday, Tuesday, Wednesday, Thursday nor Friday")
 }
 
 switch (day) {
@@ -69,5 +71,34 @@ switch (day) {
         console.log(`Switch: It's ${day}`);
         break;
     default:
-        console.log("It's neither Monday, Tuesday, Wednesday, Thursday nor Friday")
+        console.log("Switch: PepIt's neither Monday, Tuesday, Wednesday, Thursday nor Friday")
 }
+
+/*
+Ejercicio: Conversor de temperaturas
+
+Escribe un programa que solicite al usuario una temperatura y una escala de temperatura
+(Delsius o Kelvin) a la que quiera cambiar esa temperatura.
+
+El programa hace 2 preguntas:
+"Ingresa la temperatura"
+"Ingresa la escala a la que quieres cambiar tu temperatura (C o K):"
+
+Casos para probar:
+0 Cº son 273.15ºK
+10 Cº son 283.15K
+-10 Cº son 263.15L
+*/
+
+let temp = parseFloat(prompt("Ingresa la temperatura"));
+let scale = prompt(`Ingresa la escala a la que quieres cambiar esos ${temp} grados (C ó K)`);
+let result = 0;
+if (scale === 'K') {
+    result = temp + 273.15;
+} else if (scale === 'C') {
+    result = temp - 273.15;
+} else {
+    console.log('Algo ha salido mal...')
+}
+console.log(`${temp}º son equivalentes a ${result}º${scale}`)
+
