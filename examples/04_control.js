@@ -1,5 +1,5 @@
 // ejemplos de if, else if, else, switch
-/*
+
 let edad = 18;
 
 console.log(`La edad es ${edad}`); 
@@ -93,12 +93,16 @@ Casos para probar:
 let temp = parseFloat(prompt("Ingresa la temperatura"));
 let scale = prompt(`Ingresa la escala a la que quieres cambiar esos ${temp} grados (C ó K)`);
 let result = 0;
-if (scale === 'K') {
-    result = temp + 273.15;
-} else if (scale === 'C') {
-    result = temp - 273.15;
-} else {
-    console.log('Algo ha salido mal...')
-}
+// if (scale === 'K') {
+//     result = temp + 273.15;
+// } else if (scale === 'C') {
+//     result = temp - 273.15;
+// } else {
+//     console.log('Algo ha salido mal...')
+// }
+
+result = scale === "K" ? temp + 273.15 : temp -273.15; 
 console.log(`${temp}º son equivalentes a ${result}º${scale}`)
+
+
 
