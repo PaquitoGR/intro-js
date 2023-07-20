@@ -9,9 +9,9 @@
 
 // console.log('FIN',count);
 
-const fruit = ['apple', 'banana', 'kiwi', 'watermelon', 'orange', 'Kiwi'];
+const fruits = ['apple', 'banana', 'kiwi', 'watermelon', 'orange', 'Kiwi'];
 
-for (let i = 0; i < fruit.lenght; i++) {
+for (let i = 0; i < fruits.lenght; i++) {
     const fruit = fruit[i];
     if (fruit.toLowerCase() !== 'kiwi') {
         console.log(fruit);
@@ -40,3 +40,15 @@ for (let index = 0; index < 10; index ++) {
 
 // While
 
+let count = [];
+let i = 0;
+while (i <= 5) {
+    count.push(i);
+    i++;
+}
+
+while (true) {
+    const message = prompt('Exit? Y or N');
+    if (message.toUpperCase() === 'Y') break;
+    console.log(message);
+}
