@@ -90,3 +90,49 @@ const user1 = activateAccount('Kevin');
 console.log(user1);
 
 console.log(activateAccount2("Pepito"));
+
+// rest params
+
+const foo = (...params) => console.log(params);
+
+foo(1, 2, 3, 4, 'prueba', false);
+
+
+const sumar = (...params) => {
+  let sum = 0;
+  for (let num of params){
+    sum += num;
+  }
+  return sum;
+}
+
+console.log(sumar(1, 2, 3, 4))
+
+
+// closures
+
+ const counter = () => {
+  let count = 0;
+  
+  const increment = () => {
+    count++;
+  };
+
+  const getCount = () => count;
+
+  return {
+    // increment: increment, 
+    increment,
+    count: getCount(),
+  };
+}
+
+const contador1 = counter();
+
+console.log(contador1);
+const contador2 = counter();
+contador1.increment();
+contador1.increment();
+contador1.increment();
+contador1.increment();
+console.log(contador1);
