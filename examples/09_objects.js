@@ -110,10 +110,37 @@ let user2 = {
 const keys = Object.keys(user2);
 const values = Object.values(user2);
 
-console.log(keys, values)
+console.log(keys, values);
 
+const key = 'hobbies';
 /* for-in for-of */
-console.log("for-in");
-for(let u in user2) {
-    console.log(u);
+console.log("********* for-in ************\n");
+
+for(let property in user2) {
+    if (property === key) {
+        const keyValue = user2[key];
+        console.log(`tiene ${key} y el valor es ${keyValue}`);
+    }
 }
+
+console.log("********** for-of *********");
+
+const arr = [1, 3, 56, 7];
+for (let i of arr){
+    console.log(i);
+}
+
+const array = [
+    ["-", "-", "*", "-", "-"],
+    ["-", "*", "*", "*", "-"],
+    ["*", "*", "*", "*", "*"],
+  ];
+
+  for (i of array){
+    let line = "";
+    for (j of i){
+        line += j;
+    }
+    console.log(line);
+  }
+
