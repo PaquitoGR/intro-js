@@ -76,7 +76,8 @@ const activateAccount = (name) => {
   };
 }
 
-
+// si es solo un parametro, no se escriben los paréntesis.
+// al devolver un objeto (mas de una línea), la arrow function devuelve con paréntesis
 const activateAccount2 = name => (
   {
   name,
@@ -88,4 +89,4 @@ const activateAccount2 = name => (
 const user1 = activateAccount('Kevin');
 console.log(user1);
 
-console.log(activateAccount("Pepito"));
+console.log(activateAccount2("Pepito"));
