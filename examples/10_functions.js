@@ -25,9 +25,22 @@ esMayorDeEdad(16, 18);
 esMayorDeEdad(25, 21);
 esMayorDeEdad(-100, 21);
 
-function foo() {
-  return 2;
+function sum (num1 = 0, num2 = 0) {
+  return num1 + num2;
 }
 
-const variable = foo();
+const variable = sum(2, 2); // 4
 console.log(variable);
+
+function crearSaludo(nombre) {
+  return `Hola ${nombre}!`;
+}
+
+console.log(crearSaludo("Pepitilla"));
+
+const saludoPersona = crearSaludo;
+
+console.log(saludoPersona("Pepitilla"));
+
+console.log(typeof(crearSaludo)); // function
+console.log(typeof(crearSaludo("Pepis")));
