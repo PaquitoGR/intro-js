@@ -114,25 +114,56 @@ console.log(sumar(1, 2, 3, 4))
  const counter = () => {
   let count = 0;
   
-  const increment = () => {
-    count++;
-  };
+  const increment = () => count++;
 
-  const getCount = () => count;
+  const valor = () => count;
 
   return {
     // increment: increment, 
     increment,
-    count: getCount(),
+    valor,
   };
 }
 
-const contador1 = counter();
 
-console.log(contador1);
+const contador1 = counter();
 const contador2 = counter();
-contador1.increment();
-contador1.increment();
-contador1.increment();
-contador1.increment();
 console.log(contador1);
+contador1.increment();
+contador1.increment();
+contador2.increment();
+// contador1.increment();
+console.log(contador1.valor());
+console.log(contador2.valor());
+// console.log(contador2.count());
+
+/*
+console.log("******** CLOSURES 2 EL REGRESO *******");
+
+const miContador = (function() {
+  let _contador = 0;
+
+  function incrementar() {
+    return _contador++; 
+  }
+
+  function decrementar() {
+    return _contador--;
+  }
+
+  function valor() {
+    return _contador;
+  }
+
+  return {
+    incrementar,
+    decrementar,
+    valor,
+  }
+})();
+
+
+console.log(miContador.valor());
+miContador.decrementar();
+console.log(miContador.valor());
+*/
