@@ -110,18 +110,26 @@ console.log(sumar(1, 2, 3, 4))
 
 
 // closures
+console.log("******** CLOSURES *******");
 
  const counter = () => {
   let count = 0;
   
-  const increment = () => count++;
+  const increment = () => {
+    count++;
+  }
 
-  const valor = () => count;
+  const resetCount = () => {
+    count = 0;
+  }
+
+  const getCount = () => count;
 
   return {
     // increment: increment, 
     increment,
-    valor,
+    resetCount,
+    count: getCount,
   };
 }
 
@@ -133,11 +141,11 @@ contador1.increment();
 contador1.increment();
 contador2.increment();
 // contador1.increment();
-console.log(contador1.valor());
-console.log(contador2.valor());
+console.log(contador1.count());
+console.log(contador2.count());
 // console.log(contador2.count());
 
-/*
+
 console.log("******** CLOSURES 2 EL REGRESO *******");
 
 const miContador = (function() {
@@ -166,4 +174,49 @@ const miContador = (function() {
 console.log(miContador.valor());
 miContador.decrementar();
 console.log(miContador.valor());
+
+
+/* Crear un closure de una calculadora que pueda hacer las si¡guientes operaciones guardando el resultado
 */
+const calculadora = () => {
+  let operando = 0;
+
+  const sumar = (num) => operando += num;  
+  const restar = (num) => operando -= num;
+  const multiplicar = (num) => operando *= num;
+  const dividir = (num) => operando /= num;
+
+  /* Lo mismo: 
+  return {
+    sumar: (num) => operando += num,
+    restar: (num) => operando -= num,
+    multiplicar: (num) => operando *= num,
+    dividir: (num) => operando /= num,
+  }
+  */
+
+  return {
+    sumar,
+    restar,
+    multiplicar,
+    dividir,
+  }
+}
+
+
+
+const miCalculadora = calculadora();
+
+console.log(miCalculadora.sumar(5));
+console.log(miCalculadora.restar(2));
+console.log(miCalculadora.multiplicar(4));
+console.log(miCalculadora.dividir(2));
+console.log(miCalculadora.sumar(10));
+
+// pasar una función como parámetro
+
+const realizarOperación = (num1, num2, operacion) => {
+  
+};
+
+let resultadoSuma = realizarOperación(1, 2, suma); // 3
