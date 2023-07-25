@@ -140,3 +140,43 @@ const newHouse = {
 }
 
 console.log(newHouse);
+
+
+// map, filter, foreach
+
+// map
+
+// const numbers = [1, 2, 3, 4, 5, 6, 7];
+const numbers = [10, 20, 33, 48, 54, 61];
+
+const double = (number) => number * 2;
+
+// const newArray = numbers.map(function (item) {
+//     return double(item);
+// });
+
+// ArrowFunction
+// const newArray = numbers.map((item) => double(item));
+
+const newArray = numbers.map(double);
+
+console.log(newArray);
+
+// filter
+
+// const filterArray = numbers.filter((elem) => {
+//     if (elem <= 33) return true;
+//     return false;
+// });
+
+// const filterArray = numbers.filter((elem) => {
+//     return elem <= 33;
+// });
+
+const filterArray = numbers.filter((elem) => elem <= 33).map(double);
+
+console.log(filterArray)
+
+// foreach
+const doubleArray = [];
+
