@@ -213,10 +213,31 @@ console.log(miCalculadora.multiplicar(4));
 console.log(miCalculadora.dividir(2));
 console.log(miCalculadora.sumar(10));
 
-// pasar una función como parámetro
 
-const realizarOperación = (num1, num2, operacion) => {
-  
+
+
+// pasar una función como parámetro
+console.log("******** función como parámetro ********")
+
+const realizarOperacion = (num1, num2, operacion) => {
+  return operacion(num1, num2);  
 };
 
-let resultadoSuma = realizarOperación(1, 2, suma); // 3
+const realizarOperaciones = (num1, num2, type) => {
+  if (type === 'sumar') return num1 + num2;
+  else if (type === 'restar') return num1 - num2;
+  else if (type === 'concat') return `${num1} - ${num2}`;
+};
+
+const suma = (a, b) => a + b;
+const resta = (a, b) => a - b;
+
+let resultadoSuma = realizarOperacion(10, 20, suma); // 3
+// let resultadoResta = realizarOperación(1, 2, resta); // 3
+
+let resultadoMensaje = realizarOperacion(10, 20, function (num1, num2) {
+  console.log(num1, num2);
+});
+
+const prueba = realizarOperaciones(15, 5, 'concat');
+console.log(prueba)
