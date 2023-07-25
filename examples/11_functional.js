@@ -121,3 +121,22 @@ Composición de funciones: Se refiere a la combinación de múltiples funciones 
 para crear funciones mas complejas. Esto se logra mediante la combinación de las salidas
 de una función con las entradas de otra.
 */
+
+const house1 = {
+    address: 'Madrid',
+    rooms: 5,
+}
+
+const house2 = {
+    address: 'Barcelona',
+    rooms: 4,
+    parking: true,
+}
+
+const newHouse = {
+    ...house2,
+    ...house1,
+    country: 'Spain',
+}
+
+console.log(newHouse);
