@@ -150,6 +150,25 @@ downloadUserData()
 const main = async () => {
     try {
         console.log('Loading...');
+        const user = await downloadUserData();
+        console.log(user);
+        await processUserData();
+        await displayUserDashboard();
+        console.log('Fin. Ya se ve el usuario por pantalla');
+    } catch (error) {
+        console.log('oh no!', error);
+    } finally {
+        console.log("Ejecutar Siempre");
+    }
+};
+
+main();
+
+// error
+/*
+const main = async () => {
+    try {
+        console.log('Loading...');
         throw new Error('Error cargando la página');
         const user = await downloadUserData();
         console.log(user);
@@ -164,3 +183,4 @@ const main = async () => {
 };
 
 main();
+*/
