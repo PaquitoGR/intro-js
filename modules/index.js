@@ -69,8 +69,9 @@ console.log('getHours() ->', currentDate.getHours());
 
 /// regex
 
-const texto = "Hola, mi telefono es 123-456-7890";
-let pattern = /\d{3}-\d{3}-(\d{4})/; //REGEX
+const texto = "Hola, mi telefono es 123-456-7890 y 654-456-9887";
+let pattern = /\d{3}-\d{3}-(\d{4})/g; //REGEX (g -> global, comprueba no solo la primera ocurrencia)
 
 console.log(pattern.test(texto));
 console.log(texto.match(pattern));
+console.log(texto.replace(pattern, '***-***-****'));
