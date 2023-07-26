@@ -34,7 +34,7 @@ let students = [
         ]
     }
 ];
-
+/*
 const newList = students.map(({ courses, name, age}) => {
     const courseScore = sumaScores(courses);
     return {
@@ -56,3 +56,21 @@ console.log(miCalculadora.restar(2));
 console.log(miCalculadora.multiplicar(4));
 console.log(miCalculadora.dividir(2));
 console.log(miCalculadora.sumar(10));
+*/
+
+/// dates
+const currentDate = new Date();
+console.log('getDate() ->', currentDate.getDate());
+console.log('getFullYear() ->', currentDate.getFullYear());
+console.log('getDay() ->', currentDate.getDay());
+console.log('getTime ->', currentDate.getTime());
+console.log('getHours() ->', currentDate.getHours());
+
+
+/// regex
+
+const texto = "Hola, mi telefono es 123-456-7890";
+let pattern = /\d{3}-\d{3}-(\d{4})/; //REGEX
+
+console.log(pattern.test(texto));
+console.log(texto.match(pattern));
