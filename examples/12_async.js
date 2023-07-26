@@ -32,16 +32,51 @@ console.log(loading);
 
 // Callback
 
+/*
 const cargarDatosCb = (cb) => {
-    setTimeout(() =>{
-        cb('Datos cargadis');
+    setTimeout(() => {
+        cb('Datos cargados');
     }, 2000);
 };
 
 let loading = true;
+
 console.log(loading);
+
 cargarDatosCb((data) => {
     console.log(data);
     loading = false;
-    console.log()
+    console.log(loading);
+});
+
+*/
+
+const downloadUserData = (cb) => {
+    setTimeout(() => {
+        console.log('User data downloaded');
+        cb();
+    }, 2000);
+};
+
+const processUserData = (cb) => {
+    setTimeout(() => {
+        console.log('User data processed');
+        cb();
+    }, 1000);
+};
+
+const displayUserDashboard = (cb) => {
+    setTimeout(() => {
+        console.log('User dashboard displayed');
+        cb();
+    }, 3000);
+};
+
+
+downloadUserData(() => {
+    processUserData(() => {
+        displayUserDashboard(() => {
+            console.log('Fin, ya se ve el usuario por pantalla.')
+        });
+    });
 });
