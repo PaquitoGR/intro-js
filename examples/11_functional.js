@@ -179,4 +179,62 @@ console.log(filterArray)
 
 // foreach
 const doubleArray = [];
+/*
+libros.forEach(libro => {
+    if (libreo.year > 2000) arr1.push(libro);
+    else arr2.push(libro);
+    
+});
+*/
+/*
+console.log('reduce, find, findIndex')
+// reduce, find, findIndex
 
+const numbersReduceExample = [1, 2, 4, 5];
+console.log('Reduce example')
+// array -> number
+const resultado = numbersReduceExample.reduce((acum, item) => {
+    console.log('Iteration');
+    console.log('acum: ', acum);
+    console.log('item: ', item);
+    const resultado = acum + item;
+    return resultado;
+}, 0);
+
+console.log(resultado);
+*/
+const transactions = [
+    { id: 'trx001', amount: 100, description: 'Purchase 1' },
+    { id: 'trx002', amount: 50, description: 'Purchase 2' },
+    { id: 'trx003', amount: 200, description: 'Purchase 3' },
+];
+  
+  // usando reduce
+  
+  /*
+  const resultado = {
+    trx001: { id: 'trx001', amount: 100, description: 'Purchase 1' },
+    trx002: { id: 'trx002', amount: 50, description: 'Purchase 2' },
+    trx003: { id: 'trx003', amount: 200, description: 'Purchase 3' }
+  }
+  */
+const resultado = transactions.reduce((accum, item) => {
+    accum[item.id] = item;
+    return accum;
+}, {});
+
+console.log(resultado.trx001);
+
+// find, findIndex
+const trx002 = transactions.find((transaction) => {
+    return transaction.id === 'trx002';
+});
+
+console.log(trx002);
+
+
+// var a = { dato: 1};
+// var b = { dato: 3};
+// var c = { ...a, ...b};
+
+// console.log(c)
