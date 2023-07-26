@@ -75,7 +75,7 @@ let students = [
             }
         ]
     }
-]
+];
 
 console.log(students[1].courses[1].score);
 console.log('students[1]', students[1]);

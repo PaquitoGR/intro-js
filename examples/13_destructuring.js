@@ -53,5 +53,42 @@ const useProfile = () => {
 
 const [data, setData] = useProfile();
 
-profile[0]
-profile[1](123)
+// profile[0]
+// profile[1](123)
+
+
+let [{ age: firstStudentAge, courses: [{ score }]}] = [
+    {
+        name:'juan',
+        age: 20,
+        courses: [
+            {
+                name: 'Mates',
+                score: 95
+            },
+            {
+                name: 'History',
+                score: 85
+            }
+        ]
+    },
+    {
+        name: 'María',
+        age: 22,
+        courses: [
+            {
+                name: 'Mates',
+                score: 100
+            },
+            {
+                name: 'History',
+                score: 70
+            }
+        ]
+    }
+];
+
+// console.log(students[0].age);
+console.log(firstStudentAge);
+// console.log(students[0].courses[0].score);
+console.log(score);
