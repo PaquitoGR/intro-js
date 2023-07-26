@@ -127,6 +127,7 @@ const displayUserDashboard = () => {
 
 // Forma mas correcta: 
 
+/*
 console.log("Loading...");
 downloadUserData()
     .then((user) => {
@@ -137,7 +138,29 @@ downloadUserData()
     }).then(() => {
         console.log('Fin. Ya se ve el usuario por pantalla')
     }).catch((error) => {
-        console.log('Catch???', error);
+        console.log('Catch??? ', error);
     }).finally(() => {
         console.log('Ejecutar siempre');
     });
+
+*/
+
+// async/await
+
+const main = async () => {
+    try {
+        console.log('Loading...');
+        throw new Error('Error cargando la página');
+        const user = await downloadUserData();
+        console.log(user);
+        await processUserData();
+        await displayUserDashboard();
+        console.log('Fin. Ya se ve el usuario por pantalla');
+    } catch (error) {
+        console.log('oh no!', error);
+    } finally {
+        console.log("Ejecutar Siempre");
+    }
+};
+
+main();
