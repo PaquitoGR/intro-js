@@ -49,7 +49,7 @@ cargarDatosCb((data) => {
     console.log(loading);
 });
 
-*/
+
 
 const downloadUserData = (cb) => {
     setTimeout(() => {
@@ -72,7 +72,6 @@ const displayUserDashboard = (cb) => {
     }, 3000);
 };
 
-
 downloadUserData(() => {
     processUserData(() => {
         displayUserDashboard(() => {
@@ -80,3 +79,65 @@ downloadUserData(() => {
         });
     });
 });
+*/
+
+// promises
+
+// promise -> envolver una parte de código asíncrono para crear una promesa y controlar la ejecución
+
+const downloadUserData = () => {
+    return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            console.log('User data downloaded');
+            let user = { name: 'test' };
+            resolve(user);
+        }, 2000);
+    });
+};
+
+const processUserData = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log('User data processed');
+            resolve();
+        }, 1000);
+    });
+};
+
+const displayUserDashboard = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log('User dashboard displayed');
+            resolve();
+        }, 3000);
+    });
+};
+
+// console.log("Loading...");
+// downloadUserData()
+//     .then(() => {
+//         processUserData()
+//             .then(() => {
+//                 displayUserDashboard()
+//                     .then(() => {
+//                         console.log('Fin ya se ve el usuario por pantalla');
+//                     });
+//             });
+//     });
+
+// Forma mas correcta: 
+
+console.log("Loading...");
+downloadUserData()
+    .then((user) => {
+        console.log(user);
+        return processUserData();
+    }).then(() => {
+        return displayUserDashboard();
+    }).then(() => {
+        console.log('Fin. Ya se ve el usuario por pantalla')
+    }).catch((error) => {
+        console.log('Catch???', error);
+    }).finally(() => {
+        console.log('Ejecutar siempre');
+    });
